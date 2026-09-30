@@ -3,127 +3,592 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>শুভ জন্মদিন দাদা 🎂</title>
+
+<title>শুভ জন্মদিন দাদা 🎂❤️</title>
 
 <style>
 * {
   box-sizing: border-box;
 }
 
-body {
+html, body {
   margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+body {
   min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 20%, #512da8 0%, transparent 35%),
+    radial-gradient(circle at 80% 30%, #e91e63 0%, transparent 35%),
+    linear-gradient(135deg, #09001f, #17002f, #001d3d);
+  color: white;
+  position: relative;
+}
+
+/* Stars */
+.stars {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle, white 1px, transparent 1px),
+    radial-gradient(circle, #fff 1px, transparent 1px);
+  background-size: 55px 55px, 90px 90px;
+  background-position: 0 0, 30px 40px;
+  opacity: .35;
+}
+
+/* Main card */
+.container {
+  position: relative;
+  z-index: 10;
+  width: min(92%, 520px);
+  min-height: 100vh;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #a18cd1);
+  text-align: center;
 }
 
-.container {
-  text-align: center;
-  color: white;
-  padding: 25px;
-  z-index: 2;
+.card {
+  width: 100%;
+  padding: 30px 18px;
+  border-radius: 30px;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.25);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 0 30px rgba(255,105,180,.25),
+    inset 0 0 25px rgba(255,255,255,.05);
+  animation: cardGlow 3s infinite alternate;
+}
+
+@keyframes cardGlow {
+  from {
+    box-shadow: 0 0 20px rgba(255,105,180,.2);
+  }
+  to {
+    box-shadow: 0 0 45px rgba(255,105,180,.5);
+  }
 }
 
 h1 {
-  font-size: 45px;
-  margin-bottom: 15px;
-  text-shadow: 0 4px 10px rgba(0,0,0,.3);
+  font-size: clamp(30px, 9vw, 52px);
+  margin: 5px 0 10px;
+  background: linear-gradient(90deg,#ffd54f,#ff4081,#7c4dff,#40c4ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow 4s linear infinite;
+  background-size: 300%;
 }
 
-.message {
-  font-size: 22px;
-  line-height: 1.7;
-  background: rgba(255,255,255,.2);
-  padding: 20px;
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
+@keyframes rainbow {
+  0% { background-position: 0%; }
+  100% { background-position: 300%; }
+}
+
+.subtitle {
+  font-size: clamp(18px, 5vw, 25px);
+  margin: 5px 0 18px;
+}
+
+.love {
+  font-size: clamp(17px, 4.5vw, 23px);
+  line-height: 1.6;
+  color: #ffb6d9;
+  animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+  0%,100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* Cake */
+.cake-area {
+  margin: 12px auto 20px;
+  position: relative;
+  width: 180px;
+  height: 150px;
 }
 
 .cake {
-  font-size: 90px;
-  animation: bounce 1.5s infinite;
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+  width: 140px;
+  height: 75px;
+  background: linear-gradient(#ff8fab,#ff4f81);
+  border-radius: 15px 15px 20px 20px;
+  box-shadow: 0 8px 0 #d81b60, 0 15px 25px rgba(0,0,0,.3);
+  animation: cakeBounce 2s infinite;
 }
 
-.heart {
-  color: #ff1744;
+.cake:before {
+  content: "";
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 140px;
+  height: 30px;
+  border-radius: 50%;
+  background: #fff0f5;
+  box-shadow: inset 0 -7px 0 #ffc1d6;
 }
 
+.candle {
+  position: absolute;
+  width: 10px;
+  height: 42px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fff 0 7px,
+    #7c4dff 7px 14px
+  );
+  top: 28px;
+  border-radius: 4px;
+}
+
+.c1 { left: 52px; }
+.c2 { left: 84px; }
+.c3 { left: 116px; }
+
+.flame {
+  position: absolute;
+  width: 14px;
+  height: 20px;
+  background: radial-gradient(circle at 50% 70%, #fff 15%, #ffd600 40%, #ff6d00 70%);
+  border-radius: 50% 50% 50% 50%;
+  top: 8px;
+  animation: flame 0.5s infinite alternate;
+}
+
+.f1 { left: 50px; }
+.f2 { left: 82px; }
+.f3 { left: 114px; }
+
+@keyframes flame {
+  from { transform: scale(.8) rotate(-4deg); }
+  to { transform: scale(1.15) rotate(4deg); }
+}
+
+@keyframes cakeBounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* Button */
+.music-btn {
+  border: none;
+  padding: 14px 25px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(90deg,#ff4081,#7c4dff);
+  box-shadow: 0 5px 20px rgba(255,64,129,.4);
+  cursor: pointer;
+  transition: .3s;
+}
+
+.music-btn:hover {
+  transform: scale(1.08);
+}
+
+.music-btn:active {
+  transform: scale(.95);
+}
+
+/* Balloons */
 .balloon {
+  position: fixed;
+  bottom: -150px;
+  width: 55px;
+  height: 70px;
+  border-radius: 50% 50% 45% 45%;
+  z-index: 4;
+  animation: fly 9s linear infinite;
+  box-shadow: inset -10px -10px 20px rgba(0,0,0,.15);
+}
+
+.balloon:before {
+  content: "";
   position: absolute;
-  font-size: 55px;
-  animation: float 6s infinite ease-in-out;
+  width: 2px;
+  height: 90px;
+  background: rgba(255,255,255,.6);
+  left: 50%;
+  top: 68px;
 }
 
-.b1 { left: 5%; top: 15%; }
-.b2 { right: 7%; top: 20%; animation-delay: 1s; }
-.b3 { left: 15%; bottom: 10%; animation-delay: 2s; }
-.b4 { right: 15%; bottom: 12%; animation-delay: 3s; }
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-35px); }
+.balloon:after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 23px;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 9px solid currentColor;
 }
 
-@keyframes bounce {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+.b1 { left: 5%; background:#ff4081; color:#ff4081; animation-delay:0s; }
+.b2 { left: 22%; background:#40c4ff; color:#40c4ff; animation-delay:2s; }
+.b3 { left: 43%; background:#ffd740; color:#ffd740; animation-delay:4s; }
+.b4 { left: 67%; background:#69f0ae; color:#69f0ae; animation-delay:1s; }
+.b5 { left: 87%; background:#b388ff; color:#b388ff; animation-delay:3s; }
+
+@keyframes fly {
+  0% {
+    transform: translateY(0) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-60vh) rotate(8deg);
+  }
+  100% {
+    transform: translateY(-125vh) rotate(-5deg);
+  }
 }
 
+/* Confetti */
 .confetti {
-  position: absolute;
-  font-size: 25px;
-  animation: fall 5s linear infinite;
+  position: fixed;
+  top: -20px;
+  width: 9px;
+  height: 16px;
+  z-index: 20;
+  animation: confettiFall linear forwards;
 }
 
-@keyframes fall {
-  from {
-    transform: translateY(-100px) rotate(0deg);
-  }
+@keyframes confettiFall {
   to {
-    transform: translateY(110vh) rotate(360deg);
+    transform: translateY(110vh) rotate(720deg);
   }
+}
+
+/* Fireworks */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="balloon b1">🎈</div>
-<div class="balloon b2">🎈</div>
-<div class="balloon b3">🎈</div>
-<div class="balloon b4">🎈</div>
+<div class="stars"></div>
 
-<div class="confetti" style="left:10%;animation-delay:0s;">🎊</div>
-<div class="confetti" style="left:30%;animation-delay:1s;">✨</div>
-<div class="confetti" style="left:50%;animation-delay:2s;">🎉</div>
-<div class="confetti" style="left:70%;animation-delay:3s;">✨</div>
-<div class="confetti" style="left:90%;animation-delay:1.5s;">🎊</div>
+<canvas id="fireworks"></canvas>
+
+<!-- Balloons -->
+<div class="balloon b1"></div>
+<div class="balloon b2"></div>
+<div class="balloon b3"></div>
+<div class="balloon b4"></div>
+<div class="balloon b5"></div>
 
 <div class="container">
+  <div class="card">
 
-  <div class="cake">🎂</div>
+    <div style="font-size:45px;">🎉🎈🎉</div>
 
-  <h1>
-    🎉 শুভ জন্মদিন দাদা 🎉
-    <span class="heart">❤️</span>
-  </h1>
+    <h1>শুভ জন্মদিন দাদা 🎂</h1>
 
-  <div class="message">
-    তোমার জীবনের প্রতিটি দিন হোক<br>
-    নতুন স্বপ্ন, নতুন সাফল্য<br>
-    আর আনন্দে ভরা। 🌸<br><br>
+    <div class="subtitle">
+      তোমার জন্মদিন অনেক আনন্দময় হোক! 🥳
+    </div>
 
-    সবসময় ভালো থেকো,<br>
-    সুস্থ থেকো, সুখে থেকো। 😊<br><br>
+    <!-- Cake -->
+    <div class="cake-area">
 
-    <b>শুভ জন্মদিন দাদা! ❤️🎂</b>
+      <div class="flame f1"></div>
+      <div class="flame f2"></div>
+      <div class="flame f3"></div>
+
+      <div class="candle c1"></div>
+      <div class="candle c2"></div>
+      <div class="candle c3"></div>
+
+      <div class="cake"></div>
+    </div>
+
+    <div class="love">
+      ❤️ দাদা, তোমাকে অনেক ভালোবাসা ❤️
+      <br>
+      তোমার জীবন আনন্দ, সুখ আর সাফল্যে ভরে উঠুক! ✨
+    </div>
+
+    <br>
+
+    <button class="music-btn" onclick="toggleMusic()">
+      🎵 Birthday Music
+    </button>
+
+    <div id="musicStatus" style="margin-top:10px;font-size:13px;opacity:.7;">
+      Music চালু করতে বোতামে চাপো 🎶
+    </div>
+
   </div>
-
 </div>
+
+<script>
+
+/* =========================
+   CONFETTI
+========================= */
+
+function createConfetti() {
+
+  const colors = [
+    "#ff4081",
+    "#ffd740",
+    "#40c4ff",
+    "#69f0ae",
+    "#b388ff",
+    "#ff6d00"
+  ];
+
+  for(let i = 0; i < 7; i++) {
+
+    const c = document.createElement("div");
+
+    c.className = "confetti";
+
+    c.style.left = Math.random() * 100 + "vw";
+    c.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    c.style.animationDuration =
+      (3 + Math.random() * 4) + "s";
+
+    c.style.animationDelay =
+      (Math.random() * 1) + "s";
+
+    document.body.appendChild(c);
+
+    setTimeout(() => c.remove(), 8000);
+  }
+}
+
+/* Continuous confetti */
+setInterval(createConfetti, 1200);
+
+
+/* =========================
+   FIREWORKS
+========================= */
+
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+let particles = [];
+
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+
+window.addEventListener("resize", resizeCanvas);
+
+function firework() {
+
+  const x = Math.random() * canvas.width;
+  const y = 80 + Math.random() * canvas.height * .45;
+
+  const colors = [
+    "#ff4081",
+    "#ffd740",
+    "#40c4ff",
+    "#69f0ae",
+    "#b388ff",
+    "#ffffff"
+  ];
+
+  const color =
+    colors[Math.floor(Math.random() * colors.length)];
+
+  for(let i = 0; i < 70; i++) {
+
+    const angle =
+      Math.PI * 2 * i / 70;
+
+    const speed =
+      1.5 + Math.random() * 4;
+
+    particles.push({
+      x: x,
+      y: y,
+      vx: Math.cos(angle) * speed,
+      vy: Math.sin(angle) * speed,
+      life: 80 + Math.random() * 30,
+      color: color
+    });
+  }
+}
+
+function animateFireworks() {
+
+  ctx.fillStyle = "rgba(5,0,25,.18)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+
+  particles.forEach((p, index) => {
+
+    p.x += p.vx;
+    p.y += p.vy;
+
+    p.vy += .025;
+
+    p.life--;
+
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,2,0,Math.PI*2);
+
+    ctx.fillStyle = p.color;
+    ctx.fill();
+
+    if(p.life <= 0) {
+      particles.splice(index,1);
+    }
+
+  });
+
+  requestAnimationFrame(animateFireworks);
+}
+
+animateFireworks();
+
+/* Automatic fireworks */
+setInterval(firework, 1700);
+
+setTimeout(firework, 500);
+setTimeout(firework, 1000);
+
+
+/* =========================
+   BIRTHDAY MUSIC
+   Web Audio API
+========================= */
+
+let audioContext = null;
+let musicTimer = null;
+let musicPlaying = false;
+let noteIndex = 0;
+
+const melody = [
+  261.63, 261.63, 293.66, 261.63,
+  349.23, 329.63,
+  261.63, 261.63, 293.66, 261.63,
+  392.00, 349.23
+];
+
+function playNote(freq, duration) {
+
+  if(!audioContext) return;
+
+  const oscillator =
+    audioContext.createOscillator();
+
+  const gain =
+    audioContext.createGain();
+
+  oscillator.type = "sine";
+  oscillator.frequency.value = freq;
+
+  gain.gain.setValueAtTime(
+    0.0001,
+    audioContext.currentTime
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.15,
+    audioContext.currentTime + .03
+  );
+
+  gain.gain.exponentialRampToValueAtTime(
+    0.0001,
+    audioContext.currentTime + duration
+  );
+
+  oscillator.connect(gain);
+  gain.connect(audioContext.destination);
+
+  oscillator.start();
+
+  oscillator.stop(
+    audioContext.currentTime + duration
+  );
+}
+
+function playMelody() {
+
+  if(!musicPlaying) return;
+
+  playNote(
+    melody[noteIndex],
+    .35
+  );
+
+  noteIndex =
+    (noteIndex + 1) % melody.length;
+}
+
+function toggleMusic() {
+
+  if(!audioContext) {
+    audioContext =
+      new (window.AudioContext ||
+           window.webkitAudioContext)();
+  }
+
+  if(audioContext.state === "suspended") {
+    audioContext.resume();
+  }
+
+  musicPlaying = !musicPlaying;
+
+  const button =
+    document.querySelector(".music-btn");
+
+  const status =
+    document.getElementById("musicStatus");
+
+  if(musicPlaying) {
+
+    button.innerHTML =
+      "⏸️ Stop Birthday Music";
+
+    status.innerHTML =
+      "🎶 Birthday Music চলছে... ❤️";
+
+    playMelody();
+
+    musicTimer =
+      setInterval(playMelody, 430);
+
+  } else {
+
+    button.innerHTML =
+      "🎵 Birthday Music";
+
+    status.innerHTML =
+      "Music বন্ধ করা হয়েছে 🎵";
+
+    clearInterval(musicTimer);
+  }
+}
+
+</script>
 
 </body>
 </html>
